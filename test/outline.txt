@@ -1,0 +1,4 @@
+get information from manager
+manager name = input
+
+

@@ -1,0 +1,30 @@
+{
+  "name": "team_profile_generator",
+  "version": "1.0.0",
+  "description": "An application that dynamically generates a webpage when information is taken in about a software engineering team.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "inquirer": "^8.0.0",
+    "jest": "^26.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelseysanderson/team_profile_generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelseysanderson/team_profile_generator/issues"
+  },
+  "homepage": "https://github.com/kelseysanderson/team_profile_generator#readme"
+}
