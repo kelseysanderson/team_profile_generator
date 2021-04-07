@@ -5,7 +5,7 @@ const Employee  = require("./lib/employee");
 const Manager = require('./lib/manager');
 const Intern = require('./lib/intern');
 
-const team = []
+let team = []
 
 function addTeamMember(){
     inquirer.prompt([
@@ -32,6 +32,10 @@ function addTeamMember(){
         }])
 
     .then(function(data){
+        //switch statement
+        //pass in "office number, github, school"...
+
+        
         if (data.role === "Manager"){
             manager = new Manager( data.name, data.id, data.email)
                 inquirer.prompt([
@@ -93,7 +97,10 @@ function anotherMember(){
 }
 
 function getTeamHtml(team){
-    let html = `<!DOCTYPE html>
+    console.log(team[0].getRole())
+    //one html card, pass through 
+    let html = []
+    let htmlstart = `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -101,90 +108,90 @@ function getTeamHtml(team){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mandali">
+        <link rel="stylesheet" href="./style.css">
 
 
         <title>Team Profile Generator</title>
     </head>
-    <body style = "background-color: #f4f3ea">
+    <body>
         <header>
-            <div class="jumbotron jumbotron-fluid"  style = "border-bottom: 2px solid #1d2638; background: linear-gradient(to bottom, #4f5a70 0%, #333d51 100%); color:#f9f1f8; font-family: 'Mandali';">
+            <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                 <h1 class="display-4">My Team</h1>
                 <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
                 </div>
             </div>    
         </header>
-        <main class = "container" >
+        <main class = "container " >
             <section class="row justify-content-center">
                 <div class="col-12 col-md-9 mb-3">
-                <h2 style = "text-align: center; padding-bottom: 20px;">Meet Everyone:</h2>
+                <h2>Meet Everyone:</h2>
         
-            <section class="row justify-content-center">
-                `
+            <section class="row justify-content-center">`
 
+            html.push(htmlstart)
+    
     team.forEach((member,index) => {
-        if (member.officeNumber){
-            html +=`
-            <div id = "employee-card" class="col-12 col-sm-6 col-lg-4 mb-3">
-                <div class="card" style = "box-shadow:10px 10px 2px 1px rgba(41, 75, 168, 0.2); border-radius: 5px;">
-                    <div class = card-title class="card-title" style="padding: 10px 0px 10px 10px; border-bottom: 2px solid #8a6f17; background-color:#c29d23; color: #f7f5f2">
-                        <h3>${member.name}</h3>
-                        <h4>Engineer</h4>
+               
+            let card =`
+                <div id = "employee-card" class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-3">
+                    <div class="card">
+                        <div class="card-title">
+                            <h3>${member.name}</h3>
+                            <h4>${team[index].getRole()}</h4>
+                        </div>
+                        <div class="card-body">
+                        <ul class="card-text">
+                            <li><span>#️⃣ Employee Id: </span>${member.id}</li>
+                            <li><span>📧 Email: </span><a href="mailto:${member.email}">${member.email}</a></li>`
+
+            if (member.officeNumber){
+                card +=        `
+                            <li><span>📍 Office Number:</span> ${team[index].getOfficeNumber()}</li>
+                        </ul>
+                        </div>
                     </div>
-                    <div class="card-body">
-                    <ul class="card-text">
-                        <li>${member.id}</li>
-                        <li>${member.email}</li>
-                        <li>${member.officeNumber}</li>
-                    </ul>
+                </div>`
+                html.push(card)
+            }
+            else if (member.github){
+                card +=        `
+                            <li><span>💻 Github:</span><a href = "https://www.github.com/${team[index].getGithub()}"> ${team[index].getGithub()}</a></li>
+                        </ul>
+                        </div>
                     </div>
-                </div>
-            </div> `
-        } else if (member.github){
-            html += `
-            <div id = "employee-card" class="col-12 col-sm-6 col-lg-4 mb-3">
-                <div class="card" style = "box-shadow:10px 10px 2px 1px rgba(41, 75, 168, 0.2); border-radius: 5px;">
-                    <div class = card-title class="card-title" style="padding: 10px 0px 10px 10px; border-bottom: 2px solid #8a6f17; background-color:#c29d23; color: #f7f5f2">
-                        <h3>${member.name}</h3>
-                        <h4>Engineer</h4>
+                </div> `
+                html.push(card)
+
+            }else if (member.school){
+                card +=        `
+                            <li><span>🎓 School:</span> ${team[index].getSchool()}</li>
+                        </ul>
+                        </div>
                     </div>
-                    <div class="card-body">
-                    <ul class="card-text">
-                        <li>${member.id}</li>
-                        <li>${member.email}</li>
-                        <li>${member.officeNumber}</li>
-                    </ul>
-                    </div>
-                </div>
-            </div> `
-        } else{
-            html +=`
-            <div id = "employee-card" class="col-12 col-sm-6 col-lg-4 mb-3">
-                <div class="card" style = "box-shadow:10px 10px 2px 1px rgba(41, 75, 168, 0.2); border-radius: 5px;">
-                    <div class = card-title class="card-title" style="padding: 10px 0px 10px 10px; border-bottom: 2px solid #8a6f17; background-color:#c29d23; color: #f7f5f2">
-                        <h3>${member.name}</h3>
-                        <h4>Engineer</h4>
-                    </div>
-                    <div class="card-body">
-                    <ul class="card-text">
-                        <li>${member.id}</li>
-                        <li>${member.email}</li>
-                        <li>${member.officeNumber}</li>
-                    </ul>
-                    </div>
-                </div>
-            </div> `
-        }
-    });
-    html+=`  
-    </section>
-            </main>
-        </body>
-    </html>`
-    fs.writeFile('./dist/index.html', html, (err) =>
-    err ? console.error(err) : console.log("Success!")
-);
+                </div> `
+                html.push(card)
+
+            }       
+        }); 
+
+        
+        let footer =`  
+                    </section>
+        </main>
+    </body>
+</html>`
+        html.push(footer);
+
+        html = html.toString();
+        html = html.replace(/,/g,"");
+
+        
+        fs.writeFile('./dist/index.html', html, (err) =>
+        err ? console.error(err) : console.log("Success, your html has been generated and is in the dist folder!")
+        );
 }
+    
 addTeamMember();
 
     

@@ -1,0 +1,55 @@
+.jumbotron{
+    border-bottom: 2px solid #1d2638;
+    background:linear-gradient(to bottom, #4f5a70 0%, #333d51 100%);
+    color:#f9f1f8; 
+    font-family: 'Mandali'
+}
+
+body{
+    background-color:#f4f3ea;
+}
+
+h2{
+    text-align:center;
+    padding-bottom:15px;
+}
+
+.card{
+    box-shadow:8px 8px 2px 1px rgba(41, 75, 168, 0.2); 
+    border-radius: 8px;
+    height: 350px;
+}
+
+.card-title{
+    padding: 10px 3px 10px 3px;
+    border-bottom: 2px solid #8a6f17; 
+    background-color:#c9ac4d; 
+    color: black;
+    text-align:center;
+    border-radius:8px 8px 0 0;
+    height:130px;
+}
+
+h3{
+    font-size:28px;
+}
+
+h4{
+   color: black;
+   font-size:18px;
+}
+
+ul{
+    list-style-type: none;
+    padding:0;
+}
+
+span{
+    font-weight: bold;
+    font-size:16px;
+}
+
+li{
+    padding:5px;
+    font-size:15px;
+}

@@ -3,60 +3,90 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mandali">
+        <link rel="stylesheet" href="./style.css">
 
 
         <title>Team Profile Generator</title>
     </head>
-    <body style = "background-color: #f4f3ea">
+    <body>
         <header>
-            <div class="jumbotron jumbotron-fluid"  style = "border-bottom: 2px solid #1d2638; background: linear-gradient(to bottom, #4f5a70 0%, #333d51 100%); color:#f9f1f8; font-family: 'Mandali';">
+            <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                 <h1 class="display-4">My Team</h1>
                 <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
                 </div>
             </div>    
         </header>
-        <main class = "container" >
+        <main class = "container " >
             <section class="row justify-content-center">
                 <div class="col-12 col-md-9 mb-3">
-                <h2 style = "text-align: center; padding-bottom: 20px;">Meet Everyone:</h2>
+                <h2>Meet Everyone:</h2>
         
             <section class="row justify-content-center">
-                
-            <div id = "employee-card" class="col-12 col-sm-6 col-lg-4 mb-3">
-                <div class="card" style = "box-shadow:10px 10px 2px 1px rgba(41, 75, 168, 0.2); border-radius: 5px;">
-                    <div class = card-title class="card-title" style="padding: 10px 0px 10px 10px; border-bottom: 2px solid #8a6f17; background-color:#c29d23; color: #f7f5f2">
-                        <h3>fjelk</h3>
-                        <h4>Engineer</h4>
-                    </div>
-                    <div class="card-body">
-                    <ul class="card-text">
-                        <li>j</li>
-                        <li>j</li>
-                        <li>j</li>
-                    </ul>
-                    </div>
-                </div>
-            </div> 
-            <div id = "employee-card" class="col-12 col-sm-6 col-lg-4 mb-3">
-                <div class="card" style = "box-shadow:10px 10px 2px 1px rgba(41, 75, 168, 0.2); border-radius: 5px;">
-                    <div class = card-title class="card-title" style="padding: 10px 0px 10px 10px; border-bottom: 2px solid #8a6f17; background-color:#c29d23; color: #f7f5f2">
-                        <h3>jkel</h3>
-                        <h4>Engineer</h4>
-                    </div>
-                    <div class="card-body">
-                    <ul class="card-text">
-                        <li>j</li>
-                        <li>j</li>
-                        <li>undefined</li>
-                    </ul>
+                <div id = "employee-card" class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-3">
+                    <div class="card">
+                        <div class="card-title">
+                            <h3>Sarah Smith</h3>
+                            <h4>Manager</h4>
+                        </div>
+                        <div class="card-body">
+                        <ul class="card-text">
+                            <li><span>#️⃣ Employee Id: </span>1</li>
+                            <li><span>📧 Email: </span><a href="mailto:sarahsmith@email.com">sarahsmith@email.com</a></li>
+                            <li><span>📍 Office Number:</span> 1</li>
+                        </ul>
+                        </div>
                     </div>
                 </div>
-            </div>   
-    </section>
-            </main>
-        </body>
-    </html>
+                <div id = "employee-card" class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-3">
+                    <div class="card">
+                        <div class="card-title">
+                            <h3>Kelsey Sanderson</h3>
+                            <h4>Engineer</h4>
+                        </div>
+                        <div class="card-body">
+                        <ul class="card-text">
+                            <li><span>#️⃣ Employee Id: </span>2</li>
+                            <li><span>📧 Email: </span><a href="mailto:kelseymonica@gmail.com">kelseymonica@gmail.com</a></li>
+                            <li><span>💻 Github:</span><a href = "https://www.github.com/kelseysanderson"> kelseysanderson</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div> 
+                <div id = "employee-card" class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-3">
+                    <div class="card">
+                        <div class="card-title">
+                            <h3>Joe Jones</h3>
+                            <h4>Engineer</h4>
+                        </div>
+                        <div class="card-body">
+                        <ul class="card-text">
+                            <li><span>#️⃣ Employee Id: </span>3</li>
+                            <li><span>📧 Email: </span><a href="mailto:joejones@email.com">joejones@email.com</a></li>
+                            <li><span>💻 Github:</span><a href = "https://www.github.com/joejones"> joejones</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div> 
+                <div id = "employee-card" class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-3">
+                    <div class="card">
+                        <div class="card-title">
+                            <h3>Liz Thomas</h3>
+                            <h4>Intern</h4>
+                        </div>
+                        <div class="card-body">
+                        <ul class="card-text">
+                            <li><span>#️⃣ Employee Id: </span>4</li>
+                            <li><span>📧 Email: </span><a href="mailto:lizthomas@email.com">lizthomas@email.com</a></li>
+                            <li><span>🎓 School:</span> UMD</li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>   
+                    </section>
+        </main>
+    </body>
+</html>

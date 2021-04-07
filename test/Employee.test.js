@@ -1,46 +1,28 @@
-// const team = require("../lib/employee");
+const Employee = require("../lib/employee");
 
-// describe("Team", () => {
-//   describe("reverse", () => {
-//     // 'reverse' should reverse "Hello World!"
-//     it("should reverse a given string", () => {
-//       // In order to test the function, we need to create a working example. First we define 'str'. 
-//       const str = "Hello World!";
-//       // Next we define 'reversed' as the value of 'str' reversed.
-//       const reversed = "!dlroW olleH";
-//       // We pass 'str' into '.reverse()' and set that value equal to result
-//       const result = new Algo().reverse(str);
-//       // We expect 'result' to equal 'reversed' if the 'reverse()' function is working correctly.
-//       expect(result).toEqual(reversed);
-//     });
-//   });
+describe("Employee", () => {
+  describe("getName", () => {
+    it("should return a name to team array when a user enters a name following a prompt", () => {
+      const name = "Jim";
+      let employee = new Employee("Jim", 20, "jim@gmail.com");
 
-//   describe("", () => {
+      expect(employee.name).toBe("Jim");
+    });
+  });
+ 
+  describe("getId", () => {
+    it("should add id to team array when a user enters an id following a prompt", () => {
+      let employee = new Employee("Jim", 20, "jim@gmail.com");
       
-//     it("should...", () => {
+      expect(employee.id).toEqual(20);
+    });
+  });
 
-//       expect().toEqual();
-//     });
-//   });
-//   describe("", () => {
+  describe("getEmail", () => {
+    it("should add an email to team array when a user enters an email following a prompt", () => {
+      let employee = new Employee("Jim", 20, "jim@gmail.com");
       
-//     it("should...", () => {
-
-//       expect().toEqual();
-//     });
-//   });
-//   describe("", () => {
-      
-//     it("should...", () => {
-
-//       expect().toEqual();
-//     });
-//   });
-//   describe("", () => {
-      
-//     it("should...", () => {
-
-//       expect().toEqual();
-//     });
-//   });
-// });
+      expect(employee.email).toEqual("jim@gmail.com");
+    });
+  });
+});
